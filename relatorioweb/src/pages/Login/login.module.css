@@ -1,0 +1,31 @@
+.login label {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.login input,
+.login button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 250px;
+  padding: 1em;
+  outline: none;
+  border: none;
+  margin: 0 auto;
+  font-size: 1em;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 3px 3px 6px #000;
+}
+
+.login button {
+  cursor: pointer;
+  border: 1px solid limegreen;
+}
+
+.login button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
