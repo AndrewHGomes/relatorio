@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <header>
-        <h1>Meus Relatórios</h1>
+        <h2>Meus Relatórios</h2>
       </header>
 
       <Content />
