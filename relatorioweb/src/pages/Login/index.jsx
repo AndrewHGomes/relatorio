@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import formLogin from "./login.module.css";
 
 const index = () => {
@@ -11,7 +12,9 @@ const index = () => {
         <span>Senha</span>
         <input type="password" placeholder="Insira a senha..." />
       </label>
-      <button>ENTRAR</button>
+      <Link to={"/"}>
+        <button>ENTRAR</button>
+      </Link>
     </form>
   );
 };
