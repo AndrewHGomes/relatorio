@@ -1,6 +1,6 @@
 import erro from "./erro.module.css";
 
-const index = () => {
+const Erro = () => {
   return (
     <div className={erro.content}>
       <h1>:(</h1>
@@ -10,4 +10,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Erro;

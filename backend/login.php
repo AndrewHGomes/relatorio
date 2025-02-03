@@ -1,9 +1,6 @@
 <?php
 
-
-// Conexão com o banco de dados
-include './config.php';
-
+require './config.php';
 
 // Função para validar usuário e senha
 function validarUsuario($usuario, $senha)
@@ -30,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $usuario = $_POST['usuario'];
   $senha = $_POST['senha'];
 
-  if (validarUsuario($username, $senha)) {
-    echo "Usuário validado com sucesso!";
+  if (validarUsuario($usuario, $senha)) {
+    echo json_encode(["message" => "Usuário validado com sucesso!"]);
   } else {
-    echo "Algo deu errado! Verifique Nome de usuário e Senha.";
+    echo json_encode(["message" => "Algo deu errado! Verifique Nome de usuário e Senha."]);
   }
 }

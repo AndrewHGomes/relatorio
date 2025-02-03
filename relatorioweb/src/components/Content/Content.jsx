@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-const index = () => {
+const Content = () => {
   return (
     <main>
       <Outlet />
@@ -8,4 +8,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Content;

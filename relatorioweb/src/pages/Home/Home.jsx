@@ -1,6 +1,6 @@
 import formRelatorio from "./relatorio.module.css";
 
-const index = () => {
+const Home = () => {
   return (
     <form className={formRelatorio.relatorio}>
       <div className={formRelatorio.headRelatorio}>
@@ -42,4 +42,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Home;
