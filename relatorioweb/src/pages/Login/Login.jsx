@@ -9,8 +9,16 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Verifica se os campos estão preenchidos
+    if (usuario === "" || senha === "") {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    // Faz a chamada para o backend
     const response = await fetch(
-      "localhost:82/andrew/outros/relatorio/backend/login.php",
+      "http://localhost:82/andrew/outros/relatorio/backend/login.php",
       {
         method: "POST",
         headers: {
@@ -21,8 +29,10 @@ const Login = () => {
           senha: senha,
         }),
       }
-    );
-    console.log(response);
+    )
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Erro:", error));
   };
 
   const handleClick = async (e) => {
