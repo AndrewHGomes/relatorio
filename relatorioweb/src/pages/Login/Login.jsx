@@ -22,17 +22,26 @@ const Login = () => {
         }),
       }
     );
+    console.log(response);
   };
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
 
-    console.log(usuario);
-    console.log(senha);
-
-    if (usuario === "" || senha === "") {
-      alert("Insira seus dados, por favor...");
-    }
+    const response = await fetch(
+      "127.0.0.1:82/andrew/outros/relatorio/backend/login.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          usuario: usuario,
+          senha: senha,
+        }),
+      }
+    );
+    console.log(response);
 
     setUsuario("");
     setSenha("");
