@@ -1,13 +1,30 @@
 <?php
 
-$host = 'localhost';
-$db = 'sicomercio';
-$usuarioBanco = '';
-$senhaBanco = '';
+date_default_timezone_set("America/Fortaleza");
 
-try {
-  $pdo = new PDO("mysql:host=$host;dbname=$db", $usuarioBanco, $senhaBanco);
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  die("Erro na conexão: " . $e->getMessage());
+class Conexao
+{
+  public $pdo;
+
+  public function __construct()
+  {
+    try {
+      $this->pdo = new PDO("mysql:host=localhost;dbname=sicomercio_flordesal", "root", "");
+      $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+      die("Erro na conexão: " . $e->getMessage());
+    }
+  }
+
+  public function getPdo()
+  {
+    return $this->pdo;
+  }
+
+  public function executarConsulta($sql)
+  {
+    return $this->pdo->query($sql);
+  }
 }
+
+$conexao = new Conexao;

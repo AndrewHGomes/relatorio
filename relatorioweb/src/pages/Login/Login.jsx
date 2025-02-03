@@ -5,7 +5,7 @@ import { useState } from "react";
 const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
-  const [mensagem, setMensagem] = useState("");
+  // const [mensagem, setMensagem] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,20 +28,17 @@ const Login = () => {
   const handleClick = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(
-      "127.0.0.1:82/andrew/outros/relatorio/backend/login.php",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          usuario: usuario,
-          senha: senha,
-        }),
-      }
-    );
-    console.log(response);
+    if (usuario === "" || usuario === undefined) {
+      alert("Insira o usuário");
+    } else {
+      console.log(`Usuário: ${usuario}`);
+    }
+
+    if (senha === "" || senha === undefined) {
+      alert("Insira a senha");
+    } else {
+      console.log(`Senha: ${senha}`);
+    }
 
     setUsuario("");
     setSenha("");
