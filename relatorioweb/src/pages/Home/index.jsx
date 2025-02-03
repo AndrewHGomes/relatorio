@@ -5,15 +5,23 @@ const index = () => {
     <form className={formRelatorio.relatorio}>
       <div className={formRelatorio.headRelatorio}>
         <label>
-          <input type="radio" />
+          <input type="radio" name="margem-lucro" value="margem-lucro" />
           <span>Margem x Lucro</span>
         </label>
         <label>
-          <input type="radio" />
+          <input
+            type="radio"
+            name="periodo-sintetico"
+            value="periodo-sintetico"
+          />
           <span>Vendas no Período Sintético</span>
         </label>
         <label>
-          <input type="radio" />
+          <input
+            type="radio"
+            name="vendas-qtd-total"
+            value="vendas-qtd-total"
+          />
           <span>
             Vendas<small> (Qtd x Total)</small>
           </span>
