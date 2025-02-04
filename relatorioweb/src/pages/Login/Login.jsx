@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit} className={formLogin.login}>
       <label>
-        <span>Usuário</span>
+        <span>USUÁRIO</span>
         <input
           type="text"
           placeholder="Insira o nome de usuário..."
@@ -56,7 +56,7 @@ const Login = () => {
         />
       </label>
       <label>
-        <span>Senha</span>
+        <span>SENHA</span>
         <input
           type="password"
           placeholder="Insira a senha..."

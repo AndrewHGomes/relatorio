@@ -9,12 +9,17 @@
   align-items: center;
   justify-content: center;
   align-self: center;
-  gap: 1.5em;
+  gap: 1em;
+}
+
+.content .face {
+  color: orangered;
+  transform: rotate(89deg);
 }
 
 @media (max-width: 500px) {
   .content h3 {
     text-align: center;
-    padding: 2em;
+    padding: 1em;
   }
 }
