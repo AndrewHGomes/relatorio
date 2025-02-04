@@ -5,7 +5,6 @@ import { useState } from "react";
 const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
-  // const [mensagem, setMensagem] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,25 +22,6 @@ const Login = () => {
       .then((resposta) => resposta.json())
       .then((dados) => console.log(dados))
       .catch((erro) => console.error("Erro:", erro));
-  };
-
-  const handleClick = async (e) => {
-    e.preventDefault();
-
-    if (usuario === "" || usuario === undefined) {
-      alert("Insira o usuário");
-    } else {
-      console.log(`Usuário: ${usuario}`);
-    }
-
-    if (senha === "" || senha === undefined) {
-      alert("Insira a senha");
-    } else {
-      console.log(`Senha: ${senha}`);
-    }
-
-    setUsuario("");
-    setSenha("");
   };
 
   return (
@@ -65,7 +45,7 @@ const Login = () => {
         />
       </label>
       <Link to={"/"}>
-        <button onClick={handleClick}>ENTRAR</button>
+        <button>ENTRAR</button>
       </Link>
     </form>
   );

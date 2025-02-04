@@ -2,9 +2,6 @@
 
 date_default_timezone_set("America/Fortaleza");
 
-$data = date('d/m/Y - H:i');
-echo "<p>$data</p>";
-
 class Conexao
 {
   public $pdo;
