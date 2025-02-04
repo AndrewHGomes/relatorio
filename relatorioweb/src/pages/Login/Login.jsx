@@ -17,22 +17,12 @@ const Login = () => {
     }
 
     // Faz a chamada para o backend
-    const response = await fetch(
-      "http://localhost:82/andrew/outros/relatorio/backend/login.php",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          usuario: usuario,
-          senha: senha,
-        }),
-      }
+    const resposta = await fetch(
+      "http://localhost:82/andrew/outros/relatorio/backend/login.php"
     )
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error("Erro:", error));
+      .then((resposta) => resposta.json())
+      .then((dados) => console.log(dados))
+      .catch((erro) => console.error("Erro:", erro));
   };
 
   const handleClick = async (e) => {
